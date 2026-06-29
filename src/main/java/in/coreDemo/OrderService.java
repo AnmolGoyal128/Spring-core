@@ -1,16 +1,18 @@
 package in.coreDemo;
 
+import in.coreDemo.payment.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OrderService {
 
    // @Autowired      //through field injection
-    private PaymentService paymentService;  //payment servic is an reference object
+    private PaymentService paymentService;  //paymentService is an reference object
 
     @Autowired                 //  Di is done through Constructor mostly remmended
-  public OrderService(PaymentService paymentService){
+  public OrderService(@Qualifier("CP") PaymentService paymentService){
        this.paymentService =paymentService;  //receiving
     }
 

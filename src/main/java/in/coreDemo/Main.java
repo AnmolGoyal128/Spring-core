@@ -15,7 +15,7 @@ public class Main {
 
         order.placeOrder();
 
-//        PaymentService payment = context.getBean(PaymentService.class);
+//       PaymentService payment = context.getBean(PaymentService.class);
 //        payment.pay();  //No need as we use @Autowired
 
 
@@ -44,7 +44,7 @@ public class Main {
         //OrderService ke object order ke andar payment service kle object service ko wire kar raha hai
         //all the work like formation of object and work of wireing is done on only by main class but in spring it is done easily by IOC container
         //here we passed object of service
-        //order.placeOrder();  //order ka call orderservice
+        //order.placeOrder();  //order ka call orderservice me jo placeOrder ka method hai
 
         Student s1 = new Student();  // s1 is a reference variable which points to the student / Object
         //Class
