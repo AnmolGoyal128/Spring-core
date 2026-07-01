@@ -1,5 +1,7 @@
 package in.coreDemo;
 
+import in.strikes.CartService;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,7 +10,17 @@ import org.springframework.context.annotation.Configuration;
 // if we don't write the package name the @Component scan only sxans the packag ehere AppConfig files is located
 
 public class AppConfig {
-    //empty
+
+    @Bean
+    public User create(){//method
+        return new User("Aditya",45);
+
+    }
+
+    @Bean
+    public CartService createcartService(){
+        return new CartService();
+    }
 
 
     }

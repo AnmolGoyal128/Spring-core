@@ -1,7 +1,10 @@
 package in.coreDemo;
 
+import in.strikes.CartService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import javax.naming.Context;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -14,6 +17,15 @@ public class Main {
         OrderService order = context.getBean(OrderService.class);
 
         order.placeOrder();
+
+//        CartService cs = new CartService(); //Directly use from External Package
+//        cs.addToCart();
+
+        User user = context.getBean(User.class);
+        System.out.println(user.getName());
+
+        CartService cart = context.getBean(CartService.class);
+        cart.addToCart();
 
 //       PaymentService payment = context.getBean(PaymentService.class);
 //        payment.pay();  //No need as we use @Autowired
